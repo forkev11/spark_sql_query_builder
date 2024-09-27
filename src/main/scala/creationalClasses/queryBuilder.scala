@@ -36,7 +36,7 @@ trait queryBuilder {
         case _: Tuple2[String, String] => s"${obj.asInstanceOf[Tuple2[String, String]]._1} ${obj.asInstanceOf[Tuple2[String, String]]._2}";
         case _ => "Unknown";
     }
-  
+    
 }
 
 /** 
