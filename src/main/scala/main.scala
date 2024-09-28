@@ -8,7 +8,8 @@ object main {
         try {
             val query_builder_cntrol = new queryBuilderCntrol();
             val mapQueries : Map[String, List[Any]] = constants.queryMap("query_sample_1");
-            query_builder_cntrol.build_query(mapQueries);
+            val query : String = query_builder_cntrol.build_query(mapQueries);
+            println(s"Query to execute : ${query}");
         } catch {
             case ex: Exception => {println("Exception Occurred [main]: "+ex.printStackTrace());}
         }// catch closure

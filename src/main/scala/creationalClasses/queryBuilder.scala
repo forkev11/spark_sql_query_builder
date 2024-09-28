@@ -36,7 +36,7 @@ trait queryBuilder {
         case _: Tuple2[String, String] => s"${obj.asInstanceOf[Tuple2[String, String]]._1} ${obj.asInstanceOf[Tuple2[String, String]]._2}";
         case _ => "Unknown";
     }
-    
+
 }
 
 /** 
@@ -78,6 +78,11 @@ class createJoinSection extends queryBuilder {
 */
 class createOnSection extends queryBuilder {
     override val initialString = "ON ";
+    override def typeOf(obj: Any): String = obj match {
+        case _: Tuple3[String, String, String] => 
+            s"${obj.asInstanceOf[Tuple3[String, String, String]]._1} ${obj.asInstanceOf[Tuple3[String, String, String]]._2} ${obj.asInstanceOf[Tuple3[String, String, String]]._3}";
+        case _ => "Unknown";
+    }
 }
 
 /** 
@@ -87,6 +92,11 @@ class createOnSection extends queryBuilder {
 */
 class createWhereSection extends queryBuilder {
     override val initialString = "WHERE ";
+    override def typeOf(obj: Any): String = obj match {
+        case _: Tuple3[String, String, String] => 
+            s"${obj.asInstanceOf[Tuple3[String, String, String]]._1} ${obj.asInstanceOf[Tuple3[String, String, String]]._2} ${obj.asInstanceOf[Tuple3[String, String, String]]._3}";
+        case _ => "Unknown";
+    }
 }
 
 
