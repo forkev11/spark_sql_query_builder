@@ -8,10 +8,10 @@ import creationalClasses.queryPartSelection
 */
 class queryBuilderCntrol {
 
-  def validate_query(){
+  def validate_query_sequence(queryKeys : List [String], next_key : String){
 
   }
-  
+
   /**
      * <H1>def build_query</h1>
      * This functions builds the query section of SELECT/FROM/JOIN/ON/WHERE
@@ -26,7 +26,6 @@ class queryBuilderCntrol {
         val queryPartObj = queryPartSelection(keyQuery);
         queryString += queryPartObj.createQuerySection(queryMap2Build(keyQuery));
       }
-      println(queryString);
       return queryString;
     } catch {
       case ex: Exception => { println(s"Error at build_query function :  ${ex}"); return ""; }

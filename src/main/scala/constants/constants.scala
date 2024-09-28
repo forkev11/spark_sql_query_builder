@@ -2,7 +2,7 @@ package constants
 
 object constants {
 
-  val hierarchy_map : Map[String, List[String]] = Map(
+  val hierarchy_query_map : Map[String, List[String]] = Map(
     "select" -> List[String](
       "from"      
     ),
@@ -32,8 +32,14 @@ object constants {
         ),
         "from"-> List[Any](
             ("Hierarchy","h")
+        ),
+        "on"-> List[Any](
+            ("h.name","=","n.name")
+        ),
+        "join"-> List[Any](
+            ("names","n")
         )
-      ),
+      )
   );
 }
 
