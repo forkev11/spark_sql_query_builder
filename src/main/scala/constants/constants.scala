@@ -33,11 +33,11 @@ object constants {
         "from"-> List[Any](
             ("Hierarchy","h")
         ),
-        "on"-> List[Any](
-            ("h.name","=","n.name")
-        ),
         "join"-> List[Any](
             ("names","n")
+        ),
+        "on"-> List[Any](
+            ("h.name","=","n.name")
         )
       )
   );
